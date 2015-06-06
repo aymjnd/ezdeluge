@@ -88,7 +88,7 @@ else
 	echo "# Should we run at startup?" >> /etc/default/deluge-daemon
 	echo "RUN_AT_STARTUP="YES"" >> /etc/default/deluge-daemon
 
-	wget -c http://www.havetheknowhow.com/scripts/deluge-daemon_rc.txt --no-check-certificate -O deluge-daemon
+	wget -c https://raw.githubusercontent.com/najashark/ezdeluge/master/deluge-daemon_rc.txt --no-check-certificate -O deluge-daemon
 	mv deluge-daemon /etc/init.d/
 	
 	chmod 755 /etc/init.d/deluge-daemon
