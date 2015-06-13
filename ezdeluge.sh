@@ -40,6 +40,7 @@ if [ -e /etc/default/deluge-daemon ]; then
 			apt-get remove -y deluge deluged deluge-web
 			rm -rf /etc/default/deluge-daemon
 			rm -rf /etc/init.d/deluge-daemon
+			rm -rf ./config/deluge/
 			pkill deluged
 			pkill deluge-web
 			echo ""
@@ -67,6 +68,9 @@ else
 	echo "based Web Interface." 
 	echo "Make sure Apache web server has been installed!"
 	read -n1 -r -p "Press any key to continue..."
+	apt-get update
+	apt-get install python-software-properties software-properties-common -y
+	add-apt-repository ppa:deluge-team/ppa
 	apt-get update
 	apt-get install deluge deluged deluge-web -y
 	echo "This will run deluge daemon and start up the web UI"
