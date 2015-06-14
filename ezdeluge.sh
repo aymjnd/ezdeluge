@@ -40,9 +40,10 @@ if [ -e /etc/default/deluge-daemon ]; then
 			apt-get remove -y deluge deluged deluge-web
 			rm -rf /etc/default/deluge-daemon
 			rm -rf /etc/init.d/deluge-daemon
-			rm -rf .config/deluge/
+			rm -rf .config/deluge/*
 			pkill deluged
 			pkill deluge-web
+			pkill deluge
 			echo ""
 			echo "Deluge removed!"
 			echo "you should restart your server"
